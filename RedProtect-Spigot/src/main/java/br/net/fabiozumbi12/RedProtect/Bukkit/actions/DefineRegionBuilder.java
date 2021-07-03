@@ -200,25 +200,6 @@ public class DefineRegionBuilder extends RegionBuilder {
 
         newRegion = event.getRegion();
 
-        p.sendMessage(RedProtect.get().getLanguageManager().get("general.color") + "------------------------------------");
-        if (!admin) {
-            p.sendMessage(RedProtect.get().getLanguageManager().get("regionbuilder.claim.left") + (claimUsed + 1) + RedProtect.get().getLanguageManager().get("general.color") + "/" + (claimUnlimited ? RedProtect.get().getLanguageManager().get("regionbuilder.area.unlimited") : claimLimit));
-            p.sendMessage(RedProtect.get().getLanguageManager().get("regionbuilder.area.used") + " " + (regionArea == 0 ? ChatColor.GREEN + "" + regionArea : ChatColor.RED + "- " + regionArea) + "\n" +
-                    RedProtect.get().getLanguageManager().get("regionbuilder.area.left") + " " + (areaUnlimited ? RedProtect.get().getLanguageManager().get("regionbuilder.area.unlimited") : (pLimit - actualArea)));
-        }
-        p.sendMessage(RedProtect.get().getLanguageManager().get("cmdmanager.region.priority.set").replace("{region}", newRegion.getName()) + " " + newRegion.getPrior());
-        if (RedProtect.get().getConfigManager().ecoRoot().claim_cost_per_block.enable)
-            p.sendMessage(RedProtect.get().getLanguageManager().get("regionbuilder.block.cost") + reco);
-        p.sendMessage(RedProtect.get().getLanguageManager().get("general.color") + "------------------------------------");
-        if (othersName.size() > 0) {
-            p.sendMessage(RedProtect.get().getLanguageManager().get("regionbuilder.overlapping"));
-            p.sendMessage(RedProtect.get().getLanguageManager().get("region.regions") + " " + othersName);
-            p.sendMessage(RedProtect.get().getLanguageManager().get("general.color") + "------------------------------------");
-        }
-
-        if (RedProtect.get().getRegionManager().getRegions(p.getUniqueId().toString(), p.getWorld().getName()).size() == 0) {
-            p.sendMessage(RedProtect.get().getLanguageManager().get("cmdmanager.region.firstwarning"));
-            p.sendMessage(RedProtect.get().getLanguageManager().get("general.color") + "------------------------------------");
         }
 
         this.r = newRegion;
